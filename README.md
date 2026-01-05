@@ -1,96 +1,96 @@
-VoxArena 🎙️
-A scalable mobile audio streaming and social platform
+# VoxArena 🎙️
+
+**A scalable mobile audio streaming and social platform**
+
 VoxArena is a production-grade audio streaming application that combines real-time audio content delivery with social networking features. Built with Flutter and Go, it's designed for scalability, performance, and real-world deployment.
 
-🎯 Overview
-VoxArena enables users to:
+---
 
-Stream audio content in real-time
-Engage with a community through likes, comments, and replies
-Discover content through personalized feeds and smart recommendations
-Build social connections through follows and interactions
-Receive real-time notifications for platform activity
+## 🎯 Overview
+
+VoxArena enables users to:
+- Stream audio content in real-time
+- Engage with a community through likes, comments, and replies
+- Discover content through personalized feeds and smart recommendations
+- Build social connections through follows and interactions
+- Receive real-time notifications for platform activity
 
 The platform is architected for high concurrency, efficient data handling, and seamless user experience across mobile devices.
 
-✨ Core Features
-Audio Streaming
+---
 
-Real-time audio delivery with live listener tracking
-Unique listen tracking per user per room
-Download management for offline listening
-Listening history with search and filter capabilities
+## ✨ Core Features
 
-Social Engagement
+### Audio Streaming
+- **Real-time audio delivery** with live listener tracking
+- **Unique listen tracking** per user per room
+- **Download management** for offline listening
+- **Listening history** with search and filter capabilities
 
-Follow/Unfollow system with followers and following lists
-Feed customization with user hiding options
-Personalized content based on following preferences
-User discovery through search and recommendations
+### Social Engagement
+- **Follow/Unfollow system** with followers and following lists
+- **Feed customization** with user hiding options
+- **Personalized content** based on following preferences
+- **User discovery** through search and recommendations
 
-Interaction System
+### Interaction System
+- **Engagement mechanics**: Like audio rooms and comments
+- **Nested comments**: Comment and reply with unlimited depth
+- **Community posts**: Share updates with followers (YouTube Community-style)
+- **Real-time updates**: WebSocket-based live activity feed
 
-Engagement mechanics: Like audio rooms and comments
-Nested comments: Comment and reply with unlimited depth
-Community posts: Share updates with followers (YouTube Community-style)
-Real-time updates: WebSocket-based live activity feed
+### Discovery & Recommendations
+- **Smart queue algorithm** based on listening history and preferences
+- **Trending content** discovery
+- **Advanced search** for users and audio rooms
+- **Category-based browsing**
 
-Discovery & Recommendations
+### Notifications
+- **Real-time push notifications** for:
+  - New followers
+  - Likes and comments
+  - Room activity
+  - Community updates
+- **Notification management**: Mark as read, delete, bulk actions
+- **Unread count tracking**
 
-Smart queue algorithm based on listening history and preferences
-Trending content discovery
-Advanced search for users and audio rooms
-Category-based browsing
+### Content Moderation
+- **User reporting system** for inappropriate content
+- **Automated moderation**: Auto-hide after report threshold
+- **Scheduled cleanup jobs** for stale reports
+- **Admin controls** (planned)
 
-Notifications
+---
 
-Real-time push notifications for:
+## 🏗️ Architecture
 
-New followers
-Likes and comments
-Room activity
-Community updates
+### Technology Stack
 
+**Backend**
+- **Language**: Go 1.21+
+- **Framework**: Gin (HTTP router)
+- **ORM**: GORM with PostgreSQL
+- **Real-time**: WebSocket connections
+- **Authentication**: JWT-based auth
+- **Task Scheduling**: Cron jobs for cleanup and maintenance
+- **Media Storage**: Cloudinary integration
 
-Notification management: Mark as read, delete, bulk actions
-Unread count tracking
+**Mobile**
+- **Framework**: Flutter 3.x
+- **Language**: Dart
+- **State Management**: Provider/Riverpod
+- **Networking**: HTTP REST API client
+- **Media Handling**: Audio playback and caching
 
-Content Moderation
+**Infrastructure**
+- **Hosting**: Render (backend + PostgreSQL)
+- **Database**: PostgreSQL 15+
+- **CDN**: Cloudinary for media assets
+- **Version Control**: Git/GitHub
 
-User reporting system for inappropriate content
-Automated moderation: Auto-hide after report threshold
-Scheduled cleanup jobs for stale reports
-Admin controls (planned)
+### Project Structure
 
-
-🏗️ Architecture
-Technology Stack
-Backend
-
-Language: Go 1.21+
-Framework: Gin (HTTP router)
-ORM: GORM with PostgreSQL
-Real-time: WebSocket connections
-Authentication: JWT-based auth
-Task Scheduling: Cron jobs for cleanup and maintenance
-Media Storage: Cloudinary integration
-
-Mobile
-
-Framework: Flutter 3.x
-Language: Dart
-State Management: Provider/Riverpod
-Networking: HTTP REST API client
-Media Handling: Audio playback and caching
-
-Infrastructure
-
-Hosting: Render (backend + PostgreSQL)
-Database: PostgreSQL 15+
-CDN: Cloudinary for media assets
-Version Control: Git/GitHub
-
-Project Structure
+```
 voxarena/
 ├── backend/
 │   ├── controllers/       # Request handlers
@@ -112,44 +112,45 @@ voxarena/
     │   └── main.dart
     ├── assets/
     └── pubspec.yaml
+```
 
-🔐 Security
+---
 
-JWT Authentication: Secure token-based sessions
-Middleware Protection: Route-level authentication
-Password Hashing: bcrypt encryption
-Input Validation: Server-side validation for all inputs
-CORS Configuration: Controlled cross-origin access
-Rate Limiting: API throttling (planned)
+## 🔐 Security
 
+- **JWT Authentication**: Secure token-based sessions
+- **Middleware Protection**: Route-level authentication
+- **Password Hashing**: bcrypt encryption
+- **Input Validation**: Server-side validation for all inputs
+- **CORS Configuration**: Controlled cross-origin access
+- **Rate Limiting**: API throttling (planned)
 
-🚀 Deployment
-Backend (Render)
+---
 
-Deployed as a web service on Render
-PostgreSQL managed database
-Automatic deployments from GitHub
-Environment variables configured via Render dashboard
+## 🚀 Deployment
 
-Mobile App
+### Backend (Render)
+- Deployed as a web service on Render
+- PostgreSQL managed database
+- Automatic deployments from GitHub
+- Environment variables configured via Render dashboard
 
-Android:
+### Mobile App
+- **Android**: 
+  - APK for testing and distribution
+  - App Bundle for Google Play Store
+- **iOS**: 
+  - Requires macOS and Xcode
+  - App Store deployment ready
 
-APK for testing and distribution
-App Bundle for Google Play Store
+---
 
+## 📱 Build Instructions
 
-iOS:
+### Backend Setup
 
-Requires macOS and Xcode
-App Store deployment ready
-
-
-
-
-📱 Build Instructions
-Backend Setup
-bash# Clone repository
+```bash
+# Clone repository
 git clone https://github.com/harshhkalia/voxarena.git
 cd voxarena/backend
 
@@ -163,8 +164,12 @@ export CLOUDINARY_URL="cloudinary://..."
 
 # Run server
 go run main.go
-Mobile App Build
-bashcd voxarena/mobile
+```
+
+### Mobile App Build
+
+```bash
+cd voxarena/mobile
 
 # Clean previous builds
 flutter clean
@@ -180,74 +185,91 @@ flutter build appbundle --release
 
 # Build iOS (requires macOS)
 flutter build ios --release
-Output locations:
+```
 
-APK: build/app/outputs/flutter-apk/app-release.apk
-App Bundle: build/app/outputs/bundle/release/app-release.aab
+**Output locations**:
+- APK: `build/app/outputs/flutter-apk/app-release.apk`
+- App Bundle: `build/app/outputs/bundle/release/app-release.aab`
 
+---
 
-🧪 Current Status
-ComponentStatusNotesBackend API✅ ProductionDeployed on RenderPostgreSQL✅ ProductionManaged databaseWebSocket✅ ProductionReal-time updates liveAndroid App✅ FunctionalTestable and deployableiOS App⏳ PendingRequires macOS buildAdmin Panel🔜 PlannedWeb-based dashboard
+## 🧪 Current Status
 
-📊 API Endpoints
-Authentication
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Backend API | ✅ Production | Deployed on Render |
+| PostgreSQL | ✅ Production | Managed database |
+| WebSocket | ✅ Production | Real-time updates live |
+| Android App | ✅ Functional | Testable and deployable |
+| iOS App | ⏳ Pending | Requires macOS build |
+| Admin Panel | 🔜 Planned | Web-based dashboard |
 
-POST /api/auth/register - User registration
-POST /api/auth/login - User login
-GET /api/auth/me - Get current user (protected)
+---
 
-Audio Rooms
+## 📊 API Endpoints
 
-GET /api/rooms - List audio rooms
-GET /api/rooms/:id - Get room details
-POST /api/rooms - Create room (protected)
-POST /api/rooms/:id/listen - Track listen
-POST /api/rooms/:id/like - Like/unlike room
+### Authentication
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `GET /api/auth/me` - Get current user (protected)
 
-Social
+### Audio Rooms
+- `GET /api/rooms` - List audio rooms
+- `GET /api/rooms/:id` - Get room details
+- `POST /api/rooms` - Create room (protected)
+- `POST /api/rooms/:id/listen` - Track listen
+- `POST /api/rooms/:id/like` - Like/unlike room
 
-POST /api/users/:id/follow - Follow/unfollow user
-GET /api/users/:id/followers - Get followers
-GET /api/users/:id/following - Get following
-POST /api/users/:id/hide - Hide user from feed
+### Social
+- `POST /api/users/:id/follow` - Follow/unfollow user
+- `GET /api/users/:id/followers` - Get followers
+- `GET /api/users/:id/following` - Get following
+- `POST /api/users/:id/hide` - Hide user from feed
 
-Notifications
+### Notifications
+- `GET /api/notifications` - Get user notifications
+- `PUT /api/notifications/read` - Mark all as read
+- `DELETE /api/notifications/:id` - Delete notification
 
-GET /api/notifications - Get user notifications
-PUT /api/notifications/read - Mark all as read
-DELETE /api/notifications/:id - Delete notification
+---
 
+## 🎯 Roadmap
 
-🎯 Roadmap
+- [ ] Admin dashboard for moderation
+- [ ] Live audio streaming (WebRTC)
+- [ ] Voice rooms with real-time participation
+- [ ] Analytics dashboard for creators
+- [ ] Premium subscription tier
+- [ ] Push notifications (FCM)
+- [ ] Advanced recommendation algorithm
+- [ ] Multi-language support
 
- Admin dashboard for moderation
- Live audio streaming (WebRTC)
- Voice rooms with real-time participation
- Analytics dashboard for creators
- Premium subscription tier
- Push notifications (FCM)
- Advanced recommendation algorithm
- Multi-language support
+---
 
+## 📌 Notes
 
-📌 Notes
+- **Free Tier Limitations**: Render's free tier may experience cold starts and periodic data resets
+- **Scalability**: Architecture supports horizontal scaling with load balancers
+- **Code Quality**: Emphasis on clean code, separation of concerns, and maintainability
+- **Learning Project**: Built to demonstrate production-grade development practices
 
-Free Tier Limitations: Render's free tier may experience cold starts and periodic data resets
-Scalability: Architecture supports horizontal scaling with load balancers
-Code Quality: Emphasis on clean code, separation of concerns, and maintainability
-Learning Project: Built to demonstrate production-grade development practices
+---
 
+## 👤 Author
 
-👤 Author
-Harsh Kalia
+**Harsh Kalia**  
 Backend-focused software engineer specializing in scalable systems, real-time applications, and production-ready architectures.
 
-GitHub: @harshhkalia
-LinkedIn: Connect
+- GitHub: [@harshhkalia](https://github.com/harshhkalia)
+- LinkedIn: [Connect](https://linkedin.com/in/harshhkalia)
 
+---
 
-📜 License
-This project is maintained for educational and portfolio purposes.
+## 📜 License
+
+This project is maintained for educational and portfolio purposes.  
 Commercial use requires explicit permission from the author.
 
-Built with 🎙️ for audio lovers and tech enthusiasts
+---
+
+**Built with 🎙️ for audio lovers and tech enthusiasts**
