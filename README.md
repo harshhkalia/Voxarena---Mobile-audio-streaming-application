@@ -261,7 +261,7 @@ flutter build ios --release
 Backend-focused software engineer specializing in scalable systems, real-time applications, and production-ready architectures.
 
 - GitHub: [@harshhkalia](https://github.com/harshhkalia)
-- LinkedIn: [Connect](https://linkedin.com/in/harshhkalia)
+- LinkedIn: [Connect](https://www.linkedin.com/in/harsh-kalia-818990286/)
 
 ---
 
