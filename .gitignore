@@ -1,0 +1,33 @@
+# Flutter
+app/build/
+app/.dart_tool/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/.env
+
+# Android
+app/android/.gradle/
+app/android/local.properties
+app/android/app/debug/
+app/android/app/profile/
+app/android/app/release/
+
+# iOS
+app/ios/Pods/
+app/ios/.symlinks/
+app/ios/Flutter/Flutter.framework
+app/ios/Flutter/App.framework
+app/ios/Flutter/engine/
+app/ios/Flutter/Generated.xcconfig
+
+# Dart
+*.lock
+
+# Go
+server/.env
+server/server.exe
+server/bin/
+
+# OS
+.DS_Store
+Thumbs.db
